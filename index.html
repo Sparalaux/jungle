@@ -7,6 +7,43 @@
     <title>Jungle</title>
 </head>
 <body>
-    
+    <main>
+        <div id="root"></div>
+    </main>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        console.log(React);
+        function MyHeader(){
+            const titre = "la maison jungle"
+            return (<h1>{titre.toUpperCase()}</h1>);
+        }
+        function MyDescription(){
+            return (<p>Ici achetez toutes les plantes dont vous avez toujours rêvé</p>);
+        }
+        function MyBanner(){
+            return (<div>
+                <MyHeader />
+                <MyDescription />
+                </div>);
+        }
+        function Cart(){
+            var pmonstera = 8;
+            var plierre = 10;
+            var pbouquet = 15;
+            return (
+                <div>
+                    <ul>
+                        <li>monstera {pmonstera}</li>
+                        <li>lierre {plierre}</li>
+                        <li>bouquet de fleur {pbouquet}</li>
+                    </ul>
+                    <h2>Prix : {pmonstera + plierre + pbouquet}</h2>
+                </div>
+            );
+        }
+        ReactDOM.render(<div><MyBanner /><Cart /></div>, document.querySelector("#root"));
+    </script>
 </body>
 </html>
